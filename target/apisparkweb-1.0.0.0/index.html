@@ -10,14 +10,19 @@
         $.ajax({
             url:'https://mywebsite.apispark.net/v1/todoses/'
             }).done(function(data){
-                data.forEach(function(event){
-                    	$('#apicall').append('success');
+                data.forEach(function(todo){
+                    	$('#apicall').append('<ul><li>'
+                            	+ todo.todoid + '</li><li>' 
+                            	+ todo.description + '</li><li>' 
+                            	+ todo.dateadded + '</li><li>' 
+                            	+ todo.completed 
+                            	+'</li></ul>');
                     });
                 });
         });
     </script>
     <span id="apicall"></span>
-    <body>
-        <h1>Hello World!</h1>
+    <body> 
+        <h1>Updated!</h1>
     </body>
 </html>
