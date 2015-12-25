@@ -10,8 +10,13 @@
         $.ajax({
             url:'https://mywebsite.apispark.net/v1/todoses/'
             }).done(function(data){
-                data.forEach(function(event){
-                    	$('#apicall').append('success');
+                data.forEach(function(todo){
+                    	$('#apicall').append('<ul><li>'
+                            	+ todo.todoid + '</li><li>' 
+                            	+ todo.description + '</li><li>' 
+                            	+ todo.dateadded + '</li><li>' 
+                            	+ todo.completed 
+                            	+'</li></ul>');
                     });
                 });
         });
