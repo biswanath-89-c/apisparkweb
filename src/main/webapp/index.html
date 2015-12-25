@@ -4,6 +4,19 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $.ajax({
+            url:'https://mywebsite.apispark.net/v1/todoses/'
+            }).done(function(data){
+                data.forEach(function(event){
+                    	$('#apicall').append('success');
+                    });
+                });
+        });
+    </script>
+    <span id="apicall"></span>
     <body>
         <h1>Hello World!</h1>
     </body>
